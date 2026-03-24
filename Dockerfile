@@ -16,9 +16,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy installed packages from builder
-COPY --from=builder /root/.local /root/.local
-ENV PATH=/root/.local/bin:$PATH
+# Copy installed packages from builder to accessible location
+COPY --from=builder /root/.local /app/.packages
+ENV PATH=/app/.packages/bin:$PATH
+ENV PYTHONPATH=/app/.packages/lib/python3.11/site-packages:$PYTHONPATH
 
 # Copy application code
 COPY . .
