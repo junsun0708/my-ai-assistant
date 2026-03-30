@@ -1,5 +1,6 @@
 """Web Search using Tavily - date-aware search."""
 
+import os
 import logging
 from datetime import datetime, timedelta
 from typing import Optional
