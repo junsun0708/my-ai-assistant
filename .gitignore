@@ -50,3 +50,7 @@ logs/
 # Slack tokens (never commit these)
 *token*
 *secret*
+
+# Claude CLI credentials
+.claude/
+credentials.json

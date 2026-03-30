@@ -9,6 +9,8 @@ services:
       - .env
     volumes:
       - ./config:/app/config:ro
+      - ~/.claude:/root/.claude
+    user: root
     healthcheck:
       test: ["CMD", "python", "-c", "import socket; s=socket.socket(); s.connect(('8.8.8.8',53)); s.close()"]
       interval: 30s
